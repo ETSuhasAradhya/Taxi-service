@@ -1,0 +1,26 @@
+{
+  "name": "taxi-service-management-system",
+  "version": "1.0.0",
+  "description": "Full-Stack Taxi Service Management System with MySQL 8, React, Express, JWT & 16-Category SQL Query Explorer for College DBMS Courses",
+  "main": "backend/src/server.js",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "build": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install",
+    "start": "node backend/src/server.js",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend run dev",
+    "test": "npm --prefix backend test",
+    "seed": "npm --prefix backend run seed",
+    "verify:queries": "npm --prefix backend run verify:queries"
+  },
+  "keywords": [
+    "dbms",
+    "mysql",
+    "react",
+    "express",
+    "sql-explorer",
+    "taxi-service"
+  ],
+  "author": "Suhas Aradhya",
+  "license": "MIT"
+}
