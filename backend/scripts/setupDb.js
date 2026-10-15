@@ -8,13 +8,17 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 async function setupDatabase() {
   console.log('>>> Starting Database Setup...');
 
+  const isRemote = process.env.DB_HOST && !['localhost', '127.0.0.1', 'db'].includes(process.env.DB_HOST.trim().toLowerCase());
+  const useSsl = process.env.DB_SSL === 'true' || (isRemote && process.env.DB_SSL !== 'false');
+
   // Connect without DB first to ensure taxi_service_db exists
   const connection = await mysql.createConnection({
     host: process.env.DB_HOST || '127.0.0.1',
     port: parseInt(process.env.DB_PORT || '3306', 10),
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    multipleStatements: true
+    multipleStatements: true,
+    ssl: useSsl ? { rejectUnauthorized: false } : undefined
   });
 
   try {

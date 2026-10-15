@@ -12,12 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Health Check
+const { getDbStatus } = require('./config/db');
 app.get('/api/health', (req, res) => {
+  const dbStatus = getDbStatus();
   res.json({
     status: 'online',
     timestamp: new Date().toISOString(),
     service: 'Taxi Service Management System API (DBMS Project)',
-    database: process.env.DB_NAME || 'taxi_service_db'
+    database: dbStatus
   });
 });
 

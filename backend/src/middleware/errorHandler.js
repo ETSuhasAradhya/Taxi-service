@@ -5,6 +5,14 @@
 function errorHandler(err, req, res, next) {
   console.error('Unhandled Application Error:', err);
 
+  // Database Connectivity Errors (ENOTFOUND, ECONNREFUSED, ETIMEDOUT, ER_ACCESS_DENIED_ERROR)
+  if (['ENOTFOUND', 'ECONNREFUSED', 'ETIMEDOUT', 'ER_ACCESS_DENIED_ERROR'].includes(err.code) || err.message?.includes('ENOTFOUND')) {
+    return res.status(503).json({
+      success: false,
+      message: `Database Connection Failed: Unable to connect to MySQL host '${process.env.DB_HOST}'. Please verify DB_HOST, DB_USER, and DB_PASSWORD in your environment variables.`
+    });
+  }
+
   // MySQL Foreign Key Constraint Violation on Deletion (RESTRICT)
   if (err.code === 'ER_ROW_IS_REFERENCED_2') {
     return res.status(409).json({
