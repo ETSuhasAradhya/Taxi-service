@@ -1,5 +1,12 @@
 # Taxi Service Management System (DBMS Course Project)
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-brightgreen?style=for-the-badge&logo=render)](https://taxi-service-kufl.onrender.com/)
+[![Database](https://img.shields.io/badge/Database-MySQL%208.0-blue?style=for-the-badge&logo=mysql)](https://taxi-service-kufl.onrender.com/api/health)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/ETSuhasAradhya/Taxi-service)
+
+🚀 **Live Deployment URL**: **[https://taxi-service-kufl.onrender.com/](https://taxi-service-kufl.onrender.com/)**  
+📡 **Live API Health Check**: **[https://taxi-service-kufl.onrender.com/api/health](https://taxi-service-kufl.onrender.com/api/health)**
+
 A production-grade, full-stack **Taxi Service Management System** designed specifically for university Database Management Systems (DBMS) lab evaluations, practical demonstrations, and viva examinations.
 
 Built strictly with **React 18 + Vite + Tailwind CSS**, **Node.js + Express.js**, and an **Oracle MySQL 8.0 (InnoDB)** relational database engine.

@@ -2,6 +2,7 @@
   "name": "taxi-service-management-system",
   "version": "1.0.0",
   "description": "Full-Stack Taxi Service Management System with MySQL 8, React, Express, JWT & 16-Category SQL Query Explorer for College DBMS Courses",
+  "homepage": "https://taxi-service-kufl.onrender.com",
   "main": "backend/src/server.js",
   "scripts": {
     "install:all": "npm --prefix backend install && npm --prefix frontend install",
